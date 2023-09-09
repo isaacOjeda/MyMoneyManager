@@ -7,7 +7,6 @@ public class BankAccount : BaseAuditableEntity
     public DateTime Date { get; set; }
     public bool Active { get; set; }
     public BankAccountType Type { get; set; }
-
     public ICollection<RecurringMovement> RecurringMovements { get; set; } =
         new HashSet<RecurringMovement>();
     public ICollection<Income> Incomes { get; set; } =

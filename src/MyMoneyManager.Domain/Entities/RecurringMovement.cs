@@ -11,7 +11,6 @@ public class RecurringMovement : BaseAuditableEntity
     public int? DayOfMonth { get; set; }
     public int? Month { get; set; }
     public DateTime? Expires { get; set; }
-
     public int BankAccountId { get; set; }
     public BankAccount BankAccount { get; set; } = null!;
 }

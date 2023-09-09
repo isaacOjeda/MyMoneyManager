@@ -17,5 +17,8 @@ public class BankAccountConfiguration : IEntityTypeConfiguration<BankAccount>
         builder.Property(q => q.CurrentBalance)
             .HasColumnType("decimal(18,2)")
             .IsRequired();
+
+        builder.Property(q => q.UserId)
+            .IsRequired();
     }
 }

@@ -25,5 +25,8 @@ public class RecurringMovementConfiguration : IEntityTypeConfiguration<Recurring
             .WithMany(b => b.RecurringMovements)
             .HasForeignKey(b => b.BankAccountId)
             .OnDelete(DeleteBehavior.Restrict);
+
+        builder.Property(q => q.UserId)
+            .IsRequired();
     }
 }

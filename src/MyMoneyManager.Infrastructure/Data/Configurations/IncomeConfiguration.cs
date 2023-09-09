@@ -30,5 +30,8 @@ public class IncomeConfiguration : IEntityTypeConfiguration<Income>
             .WithMany(q => q.Incomes)
             .HasForeignKey(q => q.BankAccountId)
             .OnDelete(DeleteBehavior.Restrict);
+
+        builder.Property(q => q.UserId)
+            .IsRequired();
     }
 }

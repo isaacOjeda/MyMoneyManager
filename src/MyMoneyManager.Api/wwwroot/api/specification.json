@@ -6,6 +6,34 @@
     "version": "1.0.0"
   },
   "paths": {
+    "/api/BankAccounts": {
+      "get": {
+        "tags": [
+          "BankAccounts"
+        ],
+        "operationId": "GetBankAccounts",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GetBankAccountsResponse"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
     "/api/EgressCategories": {
       "get": {
         "tags": [
@@ -448,6 +476,53 @@
   },
   "components": {
     "schemas": {
+      "GetBankAccountsResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "currentBalance": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "type": {
+            "$ref": "#/components/schemas/BankAccountType"
+          },
+          "typeDescription": {
+            "type": "string"
+          }
+        }
+      },
+      "BankAccountType": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "CheckingAccount",
+          "SavingsAccount",
+          "InvestmentAccount",
+          "CreditCard",
+          "Other"
+        ],
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
       "GetEgressCategoriesResponse": {
         "type": "object",
         "additionalProperties": false,
