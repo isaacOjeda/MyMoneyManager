@@ -6,6 +6,34 @@
     "version": "1.0.0"
   },
   "paths": {
+    "/api/EgressCategories": {
+      "get": {
+        "tags": [
+          "EgressCategories"
+        ],
+        "operationId": "GetEgressCategories",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GetEgressCategoriesResponse"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
     "/api/IncomeCategories": {
       "get": {
         "tags": [
@@ -420,6 +448,22 @@
   },
   "components": {
     "schemas": {
+      "GetEgressCategoriesResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
       "GetIncomeCategoriesResponse": {
         "type": "object",
         "additionalProperties": false,

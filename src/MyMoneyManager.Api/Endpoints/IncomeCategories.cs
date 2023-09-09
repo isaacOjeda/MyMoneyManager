@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using MyMoneyManager.Api.Infrastructure;
-using MyMoneyManager.Application.Features.IncomeCategories.Queries;
+using MyMoneyManager.Application.Features.IncomeCategories.Queries.GetInvomceCategories;
 
 namespace MyMoneyManager.Api.Endpoints;
 
@@ -15,6 +15,6 @@ public class IncomeCategories : EndpointGroupBase
 
 
     public Task<List<GetIncomeCategoriesResponse>> GetIncomeCategories(ISender sender) =>
-        sender.Send(new GetIncomeCategories());
+        sender.Send(new GetIncomeCategoriesQuery());
 
 }
