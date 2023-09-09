@@ -39,3 +39,5 @@ app.Map("/", () => Results.Redirect("/api"));
 app.MapEndpoints();
 
 app.Run();
+
+public partial class Program { }

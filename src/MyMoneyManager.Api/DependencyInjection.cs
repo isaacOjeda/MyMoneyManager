@@ -42,7 +42,7 @@ public static class DependencyInjection
 
         services.AddOpenApiDocument((configure, sp) =>
         {
-            configure.Title = "CleanArchitecture API";
+            configure.Title = "My Money Manager API";
 
             // Add the fluent validations schema processor
             var fluentValidationSchemaProcessor =

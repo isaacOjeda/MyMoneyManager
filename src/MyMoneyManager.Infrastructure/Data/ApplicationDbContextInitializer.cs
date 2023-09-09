@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MyMoneyManager.Domain.Constants;
+using MyMoneyManager.Domain.Entities;
 using MyMoneyManager.Infrastructure.Identity;
 
 namespace MyMoneyManager.Infrastructure.Data;
@@ -21,7 +22,6 @@ public static class InitializerExtensions
         await initialiser.SeedAsync();
     }
 }
-
 
 public class ApplicationDbContextInitializer
 {
@@ -88,6 +88,77 @@ public class ApplicationDbContextInitializer
 
         // Default data
         // Seed, if necessary
-       
+        if (!_context.EgressCategories.Any())
+        {
+            _context.EgressCategories.Add(new EgressCategory
+            {
+                Name = "Restaurantes",
+                Description = "Comidas en restaurantes",
+                Active = true,
+            });
+
+            _context.EgressCategories.Add(new EgressCategory
+            {
+                Name = "Supermercados",
+                Description = "Compras en supermercados",
+                Active = true,
+            });
+
+            _context.EgressCategories.Add(new EgressCategory
+            {
+                Name = "Transporte",
+                Description = "Gastos de transporte",
+                Active = true,
+            });
+
+            _context.EgressCategories.Add(new EgressCategory
+            {
+                Name = "Transferencias",
+                Description = "Transferencias a otras cuentas",
+                Active = true,
+            });
+
+            _context.EgressCategories.Add(new EgressCategory
+            {
+                Name = "Servicios",
+                Description = "Pagos de servicios",
+                Active = true,
+            });
+
+            _context.EgressCategories.Add(new EgressCategory
+            {
+                Name = "Otros",
+                Description = "Otros gastos",
+                Active = true,
+            });
+
+            await _context.SaveChangesAsync();
+        }
+
+        if (!_context.IncomeCategories.Any())
+        {
+            _context.IncomeCategories.Add(new IncomeCategory
+            {
+                Name = "Salario",
+                Description = "Ingresos por salario",
+                Active = true,
+            });
+
+            _context.IncomeCategories.Add(new IncomeCategory
+            {
+                Name = "Transferencias",
+                Description = "Transferencias de otras cuentas",
+                Active = true,
+            });
+
+            _context.IncomeCategories.Add(new IncomeCategory
+            {
+                Name = "Otros",
+                Description = "Otros ingresos",
+                Active = true,
+            });
+
+            await _context.SaveChangesAsync();
+        }
     }
 }
