@@ -56,11 +56,16 @@ La capa de infraestructura proporciona las implementaciones concretas de los com
 
 Aquí está nuestro plan de desarrollo para la API de BudgetBuddy:
 
-- [ ] Proyecto inicial con la implementación de la arquitectura limpia y vertical.
-- [ ] Implementación de autenticación mediante Bearer Tokens y Identity Core.
+- [x] Proyecto inicial con la implementación de la arquitectura limpia y vertical.
+- [x] Implementación de autenticación mediante Bearer Tokens y Identity Core.
 - [ ] Generación de cliente HTTP con NSwag para facilitar la interacción con la API.
 - [ ] Gestión de Catálogos:
-    - [ ] Cuentas Bancarias (CRUD)
+    - [ ] Cuentas Bancarias
+      - [x] Creación
+      - [ ] Update general
+      - [ ] Update de balance
+      - [ ] Eliminar
+      - [x] Listado
     - [ ] Tipos de Egresos (Opcional, se pueden agregar en la fase de inicialización)
     - [ ] Tipos de Ingresos (Opcional, se pueden agregar en la fase de inicialización)
 - [ ] Visualización de Ingresos y Egresos por mes.
