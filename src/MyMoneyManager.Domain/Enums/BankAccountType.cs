@@ -2,16 +2,17 @@
 
 namespace MyMoneyManager.Domain.Enums;
 
+[Flags]
 public enum BankAccountType
 {
     [Description("Cuenta de cheques")]
-    CheckingAccount,
+    CheckingAccount = 1,
     [Description("Cuenta de ahorros")]
-    SavingsAccount,
+    SavingsAccount = 2,
     [Description("Cuenta de inversión")]
-    InvestmentAccount,
+    InvestmentAccount = 4,
     [Description("Tarjeta de crédito")]
-    CreditCard,
+    CreditCard = 8,
     [Description("Otro")]
-    Other
+    Other = 16
 }

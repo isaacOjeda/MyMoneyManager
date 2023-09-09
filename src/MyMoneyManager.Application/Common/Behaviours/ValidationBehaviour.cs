@@ -1,4 +1,6 @@
-﻿
+﻿using ValidationException = MyMoneyManager.Application.Common.Exceptions.ValidationException;
+
+
 namespace MyMoneyManager.Application.Common.Behaviours;
 
 public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>

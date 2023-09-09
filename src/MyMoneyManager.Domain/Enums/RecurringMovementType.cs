@@ -5,7 +5,7 @@ namespace MyMoneyManager.Domain.Enums;
 public enum RecurringMovementType
 {
     [Description("Ingreso")]
-    Income,
+    Income = 1,
     [Description("Egreso")]
-    Egress
+    Egress = 2
 }

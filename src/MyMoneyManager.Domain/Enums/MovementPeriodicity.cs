@@ -2,20 +2,21 @@
 
 namespace MyMoneyManager.Domain.Enums;
 
+[Flags]
 public enum MovementPeriodicity
 {
     [Description("Diario")]
-    Daily,
+    Daily = 1,
     [Description("Semanal")]
-    Weekly,
+    Weekly = 2,
     [Description("Quincenal")]
-    Monthly,
+    Monthly = 4,
     [Description("Bimensual")]
-    Bimonthly,
+    Bimonthly = 8,
     [Description("Trimestral")]
-    Quarterly,
+    Quarterly = 16,
     [Description("Semestral")]
-    Semiannual,
+    Semiannual = 32,
     [Description("Anual")]
-    Annual
+    Annual = 64
 }

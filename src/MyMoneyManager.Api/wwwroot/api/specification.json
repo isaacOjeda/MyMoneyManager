@@ -32,6 +32,35 @@
             "JWT": []
           }
         ]
+      },
+      "post": {
+        "tags": [
+          "BankAccounts"
+        ],
+        "operationId": "CreateBankAccount",
+        "requestBody": {
+          "x-name": "command",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBankAccountCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     },
     "/api/EgressCategories": {
@@ -508,6 +537,7 @@
       "BankAccountType": {
         "type": "integer",
         "description": "",
+        "x-enumFlags": true,
         "x-enumNames": [
           "CheckingAccount",
           "SavingsAccount",
@@ -516,12 +546,44 @@
           "Other"
         ],
         "enum": [
-          0,
           1,
           2,
-          3,
-          4
+          4,
+          8,
+          16
         ]
+      },
+      "CreateBankAccountCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name",
+          "description",
+          "type"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "nullable": false
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "nullable": false
+          },
+          "currentBalance": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "type": {
+            "minLength": 1,
+            "nullable": false,
+            "$ref": "#/components/schemas/BankAccountType"
+          }
+        }
       },
       "GetEgressCategoriesResponse": {
         "type": "object",
