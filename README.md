@@ -62,7 +62,7 @@ Aquí está nuestro plan de desarrollo para la API de BudgetBuddy:
 - [ ] Gestión de Catálogos:
     - [ ] Cuentas Bancarias
       - [x] Creación
-      - [ ] Update general
+      - [x] Update general
       - [ ] Update de balance
       - [ ] Eliminar
       - [x] Listado

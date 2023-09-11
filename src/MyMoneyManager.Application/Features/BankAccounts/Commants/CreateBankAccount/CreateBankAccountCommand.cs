@@ -30,7 +30,8 @@ public class CreateBankAccountHandler : IRequestHandler<CreateBankAccountCommand
             Description = request.Description,
             CurrentBalance = request.CurrentBalance,
             Type = request.Type,
-            UserId = _user.Id
+            TenantId = _user.Id,
+            Active = true
         };
 
         _context.BankAccounts.Add(newBankAccount);

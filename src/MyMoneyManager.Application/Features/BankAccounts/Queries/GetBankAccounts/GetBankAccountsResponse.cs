@@ -9,7 +9,6 @@ public class GetBankAccountsResponse
     public string Name { get; set; } = null!;
     public string Description { get; set; } = null!;
     public decimal CurrentBalance { get; set; }
-    public DateTime Date { get; set; }
     public bool Active { get; set; }
     public BankAccountType Type { get; set; }
     public string TypeDescription { get; set; } = null!;

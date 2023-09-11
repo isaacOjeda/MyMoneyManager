@@ -61,6 +61,96 @@
             "JWT": []
           }
         ]
+      },
+      "put": {
+        "tags": [
+          "BankAccounts"
+        ],
+        "operationId": "UpdateBankAccount",
+        "requestBody": {
+          "x-name": "command",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBankAccountCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/BankAccounts/{Id}": {
+      "delete": {
+        "tags": [
+          "BankAccounts"
+        ],
+        "operationId": "DeleteBankAccount",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
+    "/api/BankAccounts/balance": {
+      "put": {
+        "tags": [
+          "BankAccounts"
+        ],
+        "operationId": "UpdateBalance",
+        "requestBody": {
+          "x-name": "command",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBalanceCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
       }
     },
     "/api/EgressCategories": {
@@ -519,10 +609,6 @@
             "type": "number",
             "format": "decimal"
           },
-          "date": {
-            "type": "string",
-            "format": "date-time"
-          },
           "active": {
             "type": "boolean"
           },
@@ -582,6 +668,55 @@
             "minLength": 1,
             "nullable": false,
             "$ref": "#/components/schemas/BankAccountType"
+          }
+        }
+      },
+      "UpdateBankAccountCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "description",
+          "type"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "minLength": 1,
+            "nullable": false
+          },
+          "name": {
+            "type": "string",
+            "maxLength": 250,
+            "minLength": 1,
+            "nullable": false
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 500,
+            "minLength": 1,
+            "nullable": false
+          },
+          "type": {
+            "minLength": 1,
+            "nullable": false,
+            "$ref": "#/components/schemas/BankAccountType"
+          }
+        }
+      },
+      "UpdateBalanceCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "newBalance": {
+            "type": "number",
+            "format": "decimal"
           }
         }
       },

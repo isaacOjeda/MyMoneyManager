@@ -31,7 +31,7 @@ public class IncomeConfiguration : IEntityTypeConfiguration<Income>
             .HasForeignKey(q => q.BankAccountId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        builder.Property(q => q.UserId)
+        builder.Property(q => q.TenantId)
             .IsRequired();
     }
 }

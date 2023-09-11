@@ -18,7 +18,9 @@ public class GetBankAccountsHandler : IRequestHandler<GetBankAccountsQuery, List
     }
 
     public Task<List<GetBankAccountsResponse>> Handle(GetBankAccountsQuery request, CancellationToken cancellationToken) =>
-        _context.BankAccounts.ProjectToListAsync<GetBankAccountsResponse>(_mapper.ConfigurationProvider);
+        _context.BankAccounts
+            .Where(q => q.Active)
+            .ProjectToListAsync<GetBankAccountsResponse>(_mapper.ConfigurationProvider);
 }
 
 

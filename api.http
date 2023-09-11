@@ -1,0 +1,50 @@
+@host = https://localhost:7125
+@token = CfDJ8OPXU6wAKgdEskhj822t6p2qt9RACYrQMhPqJ3XRJWTcj2dvCI7mTFx2auNIgwFQrWnLW2vraoPu7dOZuAzq4QL9tYBom3tWFRp8rn8gEPvPJ8xV4esHh9agUMXTPXcONc5wAZFx8RdQRn3kBa49fc5XmbVsv6cbN4j33uYjh-pdJsZkkZWI-WamXmMjibJTuzs3oW_ZhBpq_jSMGZtt1PpcXbUa-iKCDKMujv6C1yNgZPrMyx0sHd_ydoSQwyq1sTQS5kPVLDJAzSwWxQViWPgsHh_d0RODiX_GYUTSu_uVKL52P4FCG98EIWqskY3mQtcnPaxuK5j5HrM5DG-fesEPIeAYxUN-ZhP0JYNJjH5pgAkCVWoSAwJd2Sj4xCgZigWHYmFrhlICHoxWpdNoViPWOW2yjQx8KFlQxXWBQ0UGFmEj7MqzcVmJOHhjXREVxBhqNylxsodypEHZCsIPA95Vzfqh2hiWfs9065hNyvrpDdiM3-a2RXQmLmwfUgoFyyQAc47hLgu2uo04s0BzrGpETw4EDRrS5iX5B2FtN_ZtI8Fix1b_Xm-7ot43AklQPTg4hHD7nx1tZsXJutNc_ByeM5LxWodk6xRWdeQMSNQPQdn_aWOACYj1q2xKKLg1A2qzW7cO34fPzJMmwtvK-wHwq2ktuyqhaFSScvoXYKjyo8Hl60rhOIeA1Q3nXn9Iqwo4MV5hpVxgoGtUii-_ro83XvlgCQVroscBWCSanHx5HsfTifP_432r7sOrS77GQXmBbOl6yc7OKrdOMrfuAXrBkauER7EiGQcyrq-seGmBu757Sww0bl9T2aISri0t2dhDSxq9mTM-OLCOyQZW4O4
+@refresh_token = CfDJ8OPXU6wAKgdEskhj822t6p2PXtzvxmTuN2l_oASvAxudwxq2QQujCBrzcCdtvvq94qxHpIrUo6t-CLzJyEBBK3bEqvSXDaY25GstVbF2Tgl3zv0rFOITtnv9fI6Gvd793g-y7Gma9ieDejV45ipVaQgdOTHuQiKwiKOI06aw4s-6AYf0YAREwAO7A83XNg8FcT4rBjVYfdNFaleYKkhkTE90wtW15L0Qal7Y5wPQ26qul-vYkrZpFU_vA6tIneHKZ7EBxhFqRSf88rPfvqqLoJPXPZkDgcsj3nDeUrNPIAoU2AZwOqWEQcJY_WFWsvmnh2kS4mRX5lGFk8YqwwHGkOoj2JuunBZrQEGBfI-97i10nB0Da0sjIhzLWRcpWx7MN3dwaJZqy8xN43OWzidFTCmxDXz_fPzrIpUohkzX3V9lQR51tOMEFlDbEtCicmbkEF1Y6kdIxW5-QtGJ9TjoAnMMOMzSmNkQq50eqaziVc3wIjAuh0ycQyEMM3Hm-XgNHEhxG6mIBriqbeifdMXsWCrPhn5jeQcFz-ZNogDrP9RKsQ5k1IUj7Bx-7Ynkvtv8rYaGayXaDPLcH6Czh2Z6G9kIMcHcxKwND2a-iIbSM5MEDwcrkd54_pDBhHvxna5yeUxOBNtmp0dM21hEujPTMLFuvxRCIDQu9DnksVYpv3N0OoXWgobvuszPTW0oE9FB83ZxlbNeoMziUfE6WjSbBR9rjPROiS1dQrKK0LJdnGfuC_QCmaU9nT_xAndk6QFOQF8ogPTY40T45cbt4mklpP0wa-30F3P3-1b8e2Gw7YpY4NkOij-xAGKsbrX3XXE9_l-kYUqBzt5CRFRAH6_mR-U
+
+### Login
+POST {{host}}/api/Users/login
+Content-Type: application/json
+
+{
+    "username": "administrator@localhost",
+    "password": "Administrator1!"
+}
+
+### Refresh Token
+POST {{host}}/api/Users/refresh
+Content-Type: application/json
+
+{
+    "refreshToken": "{{refresh_token}}"
+}
+
+### GET Bank Accounts
+GET {{host}}/api/BankAccounts
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+### POST Bank Account
+POST {{host}}/api/BankAccounts
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "Bank Account 1",
+    "description": "Bank Account 1",
+    "balance": 1000,
+    "type": 1
+}
+
+### UPDATE Bank Account
+PUT {{host}}/api/BankAccounts
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "name": "Bank Account 1",
+    "description": "Bank Account 1",
+    "balance": 1000,
+    "type": 1,
+    "id": 1
+}

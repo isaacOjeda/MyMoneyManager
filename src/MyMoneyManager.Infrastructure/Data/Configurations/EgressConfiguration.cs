@@ -28,7 +28,7 @@ public class EgressConfiguration : IEntityTypeConfiguration<Egress>
             .HasForeignKey(q => q.BankAccountId)
             .OnDelete(DeleteBehavior.Restrict);
 
-        builder.Property(q => q.UserId)
+        builder.Property(q => q.TenantId)
             .IsRequired();
     }
 }

@@ -29,16 +29,16 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplica
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
         builder.Entity<BankAccount>()
-            .HasQueryFilter(b => b.UserId == _user.Id);
+            .HasQueryFilter(b => b.TenantId == _user.Id);
 
         builder.Entity<Egress>()
-            .HasQueryFilter(e => e.UserId == _user.Id);
+            .HasQueryFilter(e => e.TenantId == _user.Id);
 
         builder.Entity<Income>()
-            .HasQueryFilter(i => i.UserId == _user.Id);
+            .HasQueryFilter(i => i.TenantId == _user.Id);
 
         builder.Entity<RecurringMovement>()
-            .HasQueryFilter(rm => rm.UserId == _user.Id);
+            .HasQueryFilter(rm => rm.TenantId == _user.Id);
 
 
         base.OnModelCreating(builder);
