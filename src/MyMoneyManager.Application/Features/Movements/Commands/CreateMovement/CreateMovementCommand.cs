@@ -57,7 +57,7 @@ public class CreateMovementCommandHandler : IRequestHandler<CreateMovementComman
             IncomeCategoryId = request.IncomeCategoryId.GetValueOrDefault()
         };
 
-        income.DomainEvents.Append(new IncomeOrEgressCreated
+        income.AddDomainEvent(new IncomeOrEgressCreated
         {
             Amount = income.Amount,
             BankAccountId = income.BankAccountId,
@@ -86,7 +86,7 @@ public class CreateMovementCommandHandler : IRequestHandler<CreateMovementComman
             EgressCategoryId = request.EgressCategoryId.GetValueOrDefault()
         };
 
-        egress.DomainEvents.Append(new IncomeOrEgressCreated
+        egress.AddDomainEvent(new IncomeOrEgressCreated
         {
             Amount = egress.Amount,
             BankAccountId = egress.BankAccountId,
@@ -100,34 +100,5 @@ public class CreateMovementCommandHandler : IRequestHandler<CreateMovementComman
             ?? throw new NotFoundException(request.BankAccountId.ToString(), nameof(BankAccount));
 
         bankAccount.CurrentBalance -= request.Amount;
-    }
-}
-
-public class CreateMovementValidator : AbstractValidator<CreateMovementCommand>
-{
-    public CreateMovementValidator()
-    {
-        RuleFor(v => v.Amount)
-            .NotEmpty()
-            .GreaterThan(0);
-        
-        RuleFor(v => v.BankAccountId)
-            .NotEmpty();
-
-        RuleFor(v => v.Type)
-            .NotEmpty();
-
-        RuleFor(v => v.Name)
-            .NotEmpty();
-
-        // Si es egress, debe tener una categoría de egreso
-        RuleFor(v => v.EgressCategoryId)
-            .NotEmpty()
-            .When(v => v.Type == RecurringMovementType.Egress);
-
-        // Si es ingreso, debe tener una categoría de ingreso
-        RuleFor(v => v.IncomeCategoryId)
-            .NotEmpty()
-            .When(v => v.Type == RecurringMovementType.Income);
     }
 }
