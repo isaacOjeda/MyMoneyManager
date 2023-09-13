@@ -36,6 +36,7 @@ Aquí está nuestro plan de desarrollo para la API de BudgetBuddy:
   - [ ] Opción de filtrar por categoría.
 - [ ] Notificaciones
   - [ ] Proyecciones de mes con dinero negativo o bajo en cuentas de cheques
+- [ ] Pruebas de Integración
 
 ## Roadmap del Proyecto Blazor
 
@@ -50,3 +51,9 @@ Aquí está nuestro plan de desarrollo para la API de BudgetBuddy:
 - [ ] Registro de nuevos Ingresos / Egresos programados para una planificación financiera efectiva.
 - [ ] Resumen Mensual con representación gráfica de los movimientos por tipo y categoría, así como la opción de filtrar por categoría.
 - [ ] Histórico Anual con representación gráfica por mes de los movimientos y la capacidad de filtrar por categoría.
+
+## Roadmap de Infraestructura
+- [ ] Plantilla con Bicep
+- [ ] Soporte con Docker y docker-compose
+- [ ] Dev Containers
+- [ ] CI/CD con Github Actions
