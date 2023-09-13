@@ -60,14 +60,14 @@ Aquí está nuestro plan de desarrollo para la API de BudgetBuddy:
 - [x] Implementación de autenticación mediante Bearer Tokens y Identity Core.
 - [ ] Generación de cliente HTTP con NSwag para facilitar la interacción con la API.
 - [ ] Gestión de Catálogos:
-    - [ ] Cuentas Bancarias
+    - [x] Cuentas Bancarias
       - [x] Creación
       - [x] Update general
-      - [ ] Update de balance
-      - [ ] Eliminar
+      - [x] Update de balance
+      - [x] Eliminar
       - [x] Listado
-    - [ ] Tipos de Egresos (Opcional, se pueden agregar en la fase de inicialización)
-    - [ ] Tipos de Ingresos (Opcional, se pueden agregar en la fase de inicialización)
+    - [x] Tipos de Egresos (Opcional, se pueden agregar en la fase de inicialización)
+    - [x] Tipos de Ingresos (Opcional, se pueden agregar en la fase de inicialización)
 - [ ] Visualización de Ingresos y Egresos por mes.
 - [ ] Registro de nuevos movimientos manuales (Ingreso o Egreso).
 - [ ] Listado de Ingresos / Egresos programados.

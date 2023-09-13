@@ -209,6 +209,92 @@
         ]
       }
     },
+    "/api/Movements": {
+      "get": {
+        "tags": [
+          "Movements"
+        ],
+        "operationId": "GetMovements",
+        "parameters": [
+          {
+            "name": "BankAccountId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "x-position": 1
+          },
+          {
+            "name": "StartDate",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "x-position": 2
+          },
+          {
+            "name": "EndDate",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "x-position": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetMovementsResponse"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Movements"
+        ],
+        "operationId": "CreateMovement",
+        "requestBody": {
+          "x-name": "command",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateMovementCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
     "/api/Users/register": {
       "post": {
         "tags": [
@@ -599,6 +685,10 @@
         "type": "object",
         "additionalProperties": false,
         "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
           "name": {
             "type": "string"
           },
@@ -749,6 +839,129 @@
           },
           "description": {
             "type": "string"
+          }
+        }
+      },
+      "GetMovementsResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "bankAccountId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bankAccountName": {
+            "type": "string"
+          },
+          "bankAccountDescription": {
+            "type": "string"
+          },
+          "balance": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "movements": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetMovementsItem"
+            }
+          }
+        }
+      },
+      "GetMovementsItem": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/RecurringMovementType"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "category": {
+            "type": "string"
+          }
+        }
+      },
+      "RecurringMovementType": {
+        "type": "integer",
+        "description": "",
+        "x-enumNames": [
+          "Income",
+          "Egress"
+        ],
+        "enum": [
+          1,
+          2
+        ]
+      },
+      "CreateMovementCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "amount",
+          "bankAccountId",
+          "type",
+          "name",
+          "incomeCategoryId",
+          "egressCategoryId"
+        ],
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "decimal",
+            "minimum": 0.0,
+            "minLength": 1,
+            "nullable": false,
+            "exclusiveMinimum": true
+          },
+          "bankAccountId": {
+            "type": "integer",
+            "format": "int32",
+            "minLength": 1,
+            "nullable": false
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "minLength": 1,
+            "nullable": false,
+            "$ref": "#/components/schemas/RecurringMovementType"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "nullable": false
+          },
+          "incomeCategoryId": {
+            "type": "integer",
+            "format": "int32",
+            "minLength": 1,
+            "nullable": false
+          },
+          "egressCategoryId": {
+            "type": "integer",
+            "format": "int32",
+            "minLength": 1,
+            "nullable": false
           }
         }
       },

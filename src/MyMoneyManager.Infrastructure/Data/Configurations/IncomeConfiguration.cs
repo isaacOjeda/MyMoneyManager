@@ -21,7 +21,7 @@ public class IncomeConfiguration : IEntityTypeConfiguration<Income>
         builder.Property(q => q.Date)
             .IsRequired();
 
-        builder.HasOne(q => q.IncomeCategory)
+        builder.HasOne(q => q.Category)
             .WithMany(q => q.Incomes)
             .HasForeignKey(q => q.IncomeCategoryId)
             .OnDelete(DeleteBehavior.Restrict);

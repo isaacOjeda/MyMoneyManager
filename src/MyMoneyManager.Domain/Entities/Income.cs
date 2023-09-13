@@ -9,7 +9,7 @@ public class Income : BaseAuditableEntity
     public bool Active { get; set; }
 
     public int IncomeCategoryId { get; set; }
-    public IncomeCategory IncomeCategory { get; set; } = null!;
+    public IncomeCategory Category { get; set; } = null!;
     public int BankAccountId { get; set; }
     public BankAccount BankAccount { get; set; } = null!;
 }

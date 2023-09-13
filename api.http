@@ -1,5 +1,5 @@
 @host = https://localhost:7125
-@token = CfDJ8OPXU6wAKgdEskhj822t6p2qt9RACYrQMhPqJ3XRJWTcj2dvCI7mTFx2auNIgwFQrWnLW2vraoPu7dOZuAzq4QL9tYBom3tWFRp8rn8gEPvPJ8xV4esHh9agUMXTPXcONc5wAZFx8RdQRn3kBa49fc5XmbVsv6cbN4j33uYjh-pdJsZkkZWI-WamXmMjibJTuzs3oW_ZhBpq_jSMGZtt1PpcXbUa-iKCDKMujv6C1yNgZPrMyx0sHd_ydoSQwyq1sTQS5kPVLDJAzSwWxQViWPgsHh_d0RODiX_GYUTSu_uVKL52P4FCG98EIWqskY3mQtcnPaxuK5j5HrM5DG-fesEPIeAYxUN-ZhP0JYNJjH5pgAkCVWoSAwJd2Sj4xCgZigWHYmFrhlICHoxWpdNoViPWOW2yjQx8KFlQxXWBQ0UGFmEj7MqzcVmJOHhjXREVxBhqNylxsodypEHZCsIPA95Vzfqh2hiWfs9065hNyvrpDdiM3-a2RXQmLmwfUgoFyyQAc47hLgu2uo04s0BzrGpETw4EDRrS5iX5B2FtN_ZtI8Fix1b_Xm-7ot43AklQPTg4hHD7nx1tZsXJutNc_ByeM5LxWodk6xRWdeQMSNQPQdn_aWOACYj1q2xKKLg1A2qzW7cO34fPzJMmwtvK-wHwq2ktuyqhaFSScvoXYKjyo8Hl60rhOIeA1Q3nXn9Iqwo4MV5hpVxgoGtUii-_ro83XvlgCQVroscBWCSanHx5HsfTifP_432r7sOrS77GQXmBbOl6yc7OKrdOMrfuAXrBkauER7EiGQcyrq-seGmBu757Sww0bl9T2aISri0t2dhDSxq9mTM-OLCOyQZW4O4
+@token = CfDJ8OPXU6wAKgdEskhj822t6p0GPcZw_XaUDOSU5ioNmiyrIAAlucoHWT7e6nOVUryG9qWJaea05QDpSlLXY4D1KInPOrK_jBJSsVQOjR4ntbOAdHhWqmE0YcvK2osMsFc7feAh-xKHUuVfFYOmA_9YRJV8IaKD6YFfZbvRupkXXGe-SVuIEhPHLXYUT7hvmQVdyfevQWAfdW391KNNChFK7T5Zo02fbyYgP1g_2xs7SW5mChu8PyiL7YsVF2y-M8dz0j_iE-0AQQsgCsBYX3so9olmHLM8HzXA3P3Bc6Vy73dAjkxILuJIv9eBcX-V5uDIEP7yjKZOIy5qEbHwDtgK1hTSwzd5FumVNKl67gBX8gRGiyIutia1xiHXHMdJdmQvqjkdXM2mIATcPEYIDTDQfzEe_sbue4CsIUY3R4ZljnHsP2HukoPlUM8uClhxojHpoeqOp9Kby05ZkxewGYIMKjoeU-j9e9m0clBFBDUSwoiEVUQDMaylNs7TW8mhzvEH4v2Mt66nX_Jix_b1fF7au0R1GpBWZph2_4XfeZ6ISqhvgRHXvzjRzxrRjf3wMXi4pR65AnTWoGO4IQpj-G5DZ3oBlPwK9DHiu3rC3qFhtPtnMrHbbmW8TpXO_xDLM_Vqp5zgHJN6AMOpVSI_uk05g1AQw9IL3xX8R_mjIIDHE3cebEI7pll7uT73s9voQM5BB2vTxhlIJbW6l5YA86ouxDpdocW0O4Qhf840gYVbIEUyHVcaBOosISyqhWH5ZEBZGl2rv2SFAbL9uNp6rawWDyPP62Uls75Bef93MyZ6zsf5hK6GG0YtfGL9_iTcgBoBo-mfEXwu5eacTEFnc9lBO1E
 @refresh_token = CfDJ8OPXU6wAKgdEskhj822t6p2PXtzvxmTuN2l_oASvAxudwxq2QQujCBrzcCdtvvq94qxHpIrUo6t-CLzJyEBBK3bEqvSXDaY25GstVbF2Tgl3zv0rFOITtnv9fI6Gvd793g-y7Gma9ieDejV45ipVaQgdOTHuQiKwiKOI06aw4s-6AYf0YAREwAO7A83XNg8FcT4rBjVYfdNFaleYKkhkTE90wtW15L0Qal7Y5wPQ26qul-vYkrZpFU_vA6tIneHKZ7EBxhFqRSf88rPfvqqLoJPXPZkDgcsj3nDeUrNPIAoU2AZwOqWEQcJY_WFWsvmnh2kS4mRX5lGFk8YqwwHGkOoj2JuunBZrQEGBfI-97i10nB0Da0sjIhzLWRcpWx7MN3dwaJZqy8xN43OWzidFTCmxDXz_fPzrIpUohkzX3V9lQR51tOMEFlDbEtCicmbkEF1Y6kdIxW5-QtGJ9TjoAnMMOMzSmNkQq50eqaziVc3wIjAuh0ycQyEMM3Hm-XgNHEhxG6mIBriqbeifdMXsWCrPhn5jeQcFz-ZNogDrP9RKsQ5k1IUj7Bx-7Ynkvtv8rYaGayXaDPLcH6Czh2Z6G9kIMcHcxKwND2a-iIbSM5MEDwcrkd54_pDBhHvxna5yeUxOBNtmp0dM21hEujPTMLFuvxRCIDQu9DnksVYpv3N0OoXWgobvuszPTW0oE9FB83ZxlbNeoMziUfE6WjSbBR9rjPROiS1dQrKK0LJdnGfuC_QCmaU9nT_xAndk6QFOQF8ogPTY40T45cbt4mklpP0wa-30F3P3-1b8e2Gw7YpY4NkOij-xAGKsbrX3XXE9_l-kYUqBzt5CRFRAH6_mR-U
 
 ### Login
@@ -47,4 +47,51 @@ Authorization: Bearer {{token}}
     "balance": 1000,
     "type": 1,
     "id": 1
+}
+
+### UPDATE Balance
+PUT {{host}}/api/BankAccounts/balance
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "id": 1,
+    "newBalance": 2000
+}
+
+
+### GET Movements
+GET {{host}}/api/Movements?bankAccountId=3&startDate=2023-09-10T03:22:57.404Z&endDate=2023-09-12T03:22:57.404Z
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+### POST Create Movement
+POST {{host}}/api/Movements
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "date": "2023-09-10T03:22:57.404Z",
+    "amount": 100,
+    "bankAccountId": 3,
+    "description": "Movement 1 description",
+    "type": 1,
+    "name": "Movement 1",
+    "incomeCategoryId": 1
+}
+
+### POST Create Movement
+POST {{host}}/api/Movements
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "date": "2023-09-10T03:22:57.404Z",
+    "amount": 50,
+    "bankAccountId": 3,
+    "description": "Movement 3 description",
+    "type": 2,
+    "name": "Movement 3",
+    "egressCategoryId": 1
 }
