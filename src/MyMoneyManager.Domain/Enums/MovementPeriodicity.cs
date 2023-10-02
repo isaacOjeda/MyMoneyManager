@@ -9,7 +9,7 @@ public enum MovementPeriodicity
     Daily = 1,
     [Description("Semanal")]
     Weekly = 2,
-    [Description("Quincenal")]
+    [Description("Mensual")]
     Monthly = 4,
     [Description("Bimensual")]
     Bimonthly = 8,

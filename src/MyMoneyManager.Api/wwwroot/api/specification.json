@@ -295,6 +295,63 @@
         ]
       }
     },
+    "/api/RecurringMovements": {
+      "get": {
+        "tags": [
+          "RecurringMovements"
+        ],
+        "operationId": "GetRecurringMovements",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GetRecurringMovementsResponse"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "RecurringMovements"
+        ],
+        "operationId": "CreateRecurringMovement",
+        "requestBody": {
+          "x-name": "command",
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRecurringMovementCommand"
+              }
+            }
+          },
+          "required": true,
+          "x-position": 1
+        },
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "security": [
+          {
+            "JWT": []
+          }
+        ]
+      }
+    },
     "/api/Users/register": {
       "post": {
         "tags": [
@@ -962,6 +1019,125 @@
             "format": "int32",
             "minLength": 1,
             "nullable": false
+          }
+        }
+      },
+      "GetRecurringMovementsResponse": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "periodicity": {
+            "$ref": "#/components/schemas/MovementPeriodicity"
+          },
+          "periodicityDescription": {
+            "type": "string"
+          },
+          "dayOfWeek": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "dayOfMonth": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "month": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "expires": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "bankAccountId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bankAccountDescription": {
+            "type": "string"
+          }
+        }
+      },
+      "MovementPeriodicity": {
+        "type": "integer",
+        "description": "",
+        "x-enumFlags": true,
+        "x-enumNames": [
+          "Daily",
+          "Weekly",
+          "Monthly",
+          "Bimonthly",
+          "Quarterly",
+          "Semiannual",
+          "Annual"
+        ],
+        "enum": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32,
+          64
+        ]
+      },
+      "CreateRecurringMovementCommand": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "periodicity": {
+            "$ref": "#/components/schemas/MovementPeriodicity"
+          },
+          "dayOfWeek": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "dayOfMonth": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "month": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "expires": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "bankAccountId": {
+            "type": "integer",
+            "format": "int32"
           }
         }
       },
